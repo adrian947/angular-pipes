@@ -1,0 +1,34 @@
+<p-panel header="Basics Pipes" class="p-2">
+  <p>Pipes includes in Angular - Usually in common module</p>
+</p-panel>
+
+<div class="grid mt-2">
+  <div class="col-4">
+    <p-card header="Uppercase">
+      {{ nameUpper | uppercase }}
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="Lowercase">
+      {{ nameLower | lowercase }}
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="Titlecase">
+      {{ fullName | titlecase }}
+    </p-card>
+  </div>
+  <div class="col-6">
+    <p-card header="Date">
+      <ul>
+        <li><strong>new Date (original data) :</strong> {{ customDate }}</li>
+        <li><strong>date: </strong>{{ customDate | date }}</li>
+        <li><strong>short: </strong>{{ customDate | date:'short' }}</li>
+        <li><strong>long: </strong>{{ customDate | date:'long' }}</li>
+        <li><strong>MMMM: </strong>{{ customDate | date:'MMMM' }}</li>
+        <li><strong>MMMM dd, yyyy: </strong>{{ customDate | date:'MMMM dd, yyyy' }}</li>
+        <li><strong>TimeZone(GMT-3): </strong>{{ customDate | date:'long':'GMT-3' }}</li>
+      </ul>
+    </p-card>
+  </div>
+</div>
