@@ -1,1 +1,54 @@
-<p>common-page works!</p>
+<p-panel header="Uncommon Pipes" class="p-2">
+  <p>Pipes includes in Angular - Usually in common module</p>
+</p-panel>
+
+<div class="grid mt-2">
+  <div class="col-4">
+    <p-card header="I18nSelect">
+      <h4>
+        Saludos {{ name }}, es un placer
+        {{ gender | i18nSelect : invitationMap }} al evento
+      </h4>
+      <p-button (onClick)="handleChange()">Change Name</p-button>
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="I18nPlural">
+      <h4>{{ clients.length | i18nPlural : clientsMap }}</h4>
+      <p-button (onClick)="deleteClient()">Delete client</p-button>
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="Slice">
+      <div class="d-flex">
+        <div>
+          <h3>Orginal</h3>
+          <h4>{{ clients }}</h4>
+        </div>
+        <div>
+          <h3>Slice 0:2</h3>
+          <h4>{{ clients | slice : 0 : 2 }}</h4>
+        </div>
+      </div>
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="Key Value">
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          {{item.key}}: {{item.value}}
+        </li>
+      </ul>
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="JSON">
+      <h4>{{ person | json }}</h4>
+    </p-card>
+  </div>
+  <div class="col-4">
+    <p-card header="Async">
+      <h4>{{ MyObservableTimer | async }}</h4>
+    </p-card>
+  </div>
+</div>

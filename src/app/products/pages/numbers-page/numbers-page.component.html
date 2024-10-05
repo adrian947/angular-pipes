@@ -1,1 +1,16 @@
-<p>numbers-page works!</p>
+<p-panel header="Number Pipes" class="p-2">
+  <p>Pipes includes in Angular - Usually in common module</p>
+</p-panel>
+
+<div class="grid mt-2">
+  <div class="col-4">
+    <p-card header="Numbers">
+      <ul>
+        <li><strong>number (dos decimals): </strong>{{ totalSells | number:'1.2-2'}}</li>
+        <li><strong>number (Add $): </strong>{{ totalSells + 1235 | currency:'ARS':'symbol-narrow':'1.0-4'}}</li>
+        <li><strong>percentage </strong>{{ percentage | percent}}</li>
+      </ul>
+    </p-card>
+  </div>
+
+</div>

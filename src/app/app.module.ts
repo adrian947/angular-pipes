@@ -5,6 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 
+// config local
+
+import localeEs from '@angular/common/locales/es-AR';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localeEs);
+
+
 @NgModule({
   declarations: [AppComponent],
   imports: [

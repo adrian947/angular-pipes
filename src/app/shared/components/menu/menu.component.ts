@@ -34,7 +34,7 @@ export class MenuComponent {
             label: 'Not Common',
             icon: 'pi pi-globe',
             command: () => {
-              this.router.navigate(['/products/common']);
+              this.router.navigate(['/products/uncommon']);
             },
           },
         ],
@@ -42,7 +42,15 @@ export class MenuComponent {
       {
         label: 'Custom pipes',
         icon: 'pi pi-cog',
-        items: [{ label: 'Others', icon: 'pi pi-cog' }],
+        items: [
+          {
+            label: 'Others',
+            icon: 'pi pi-cog',
+            command: () => {
+              this.router.navigate(['/products/custom']);
+            },
+          },
+        ],
       },
     ];
   }

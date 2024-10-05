@@ -1,0 +1,38 @@
+<p-panel header="Custom Pipes" class="p-2">
+  <p>Custom pipes in Angular</p>
+</p-panel>
+
+<div class="grid mt-2">
+  <div class="col-4">
+    <p-card header="Numbers">
+      <p>{{ "Test with dynamic args" | toggleCase:isUpperCase}}</p>
+      <p>{{ "hola como va" | toggleCase : true }}</p>
+      <p>{{ "GOL DE BOCA" | toggleCase : false }}</p>
+      <p-toolbar>
+        <div class="p-toolbar-group-start">
+            <p-button label="Toggle" class="mr-2" (onClick)="toggleUpperCase()"/>
+        </div>
+    </p-toolbar>
+    </p-card>
+  </div>
+  <div class="col-8">
+    <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Code</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Quantity</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+          <tr>
+              <td>{{ product.code }}</td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.category | isBetter }}</td>
+              <td>{{ product.quantity }}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+  </div>
+</div>
